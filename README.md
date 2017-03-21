@@ -2,7 +2,7 @@
 
 TCP message transmitter module.
 
-##Implement
+## Implement
 
 1. added module via pip install
 ```
@@ -33,6 +33,6 @@ class BidSocketTransmitter(SocketTransmitter):
 
 4. send message when service finish / success or failed
 ```python
-s = BidSocketTransmitter(SERVER_IP, SERVER_POT, 1024)
+s = BidSocketTransmitter(SERVER_IP, SERVER_PORT, 1024)
 s.execute(s.build_message(12, 1515, True, ''))
 ```
