@@ -5,9 +5,9 @@ TCP message transmitter module.
 ##Implement
 
 1. added module via pip install
-
-    $ pip install git+https://github.com/moonshot-marketing/kt-socket-transmitter.git
-
+```
+$ pip install git+https://github.com/moonshot-marketing/kt-socket-transmitter.git
+```
 2.
 import all from kt_socket_transmitter
 ```python
