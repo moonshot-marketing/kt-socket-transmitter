@@ -15,7 +15,7 @@ from abc import ABCMeta, abstractmethod
 import logging
 
 SUCCESS = 'MSG_RECEIVED'
-END_MESSAGE = '|||'
+END_MESSAGE = '\x04'
 
 
 class SocketTransmitter(object):
@@ -91,7 +91,10 @@ class SocketTransmitter(object):
 
     def _send_message(self, message):
         try:
-            self.socket.send(message + END_MESSAGE)
+            f = self.socket.makefile()
+            f.write(message + END_MESSAGE)
+            f.flush()
+
         except socket.error, exc:
             self.logger.error('message send error: %s' % exc.message)
 

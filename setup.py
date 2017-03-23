@@ -13,7 +13,7 @@ from setuptools import setup
 
 setup(
     name='kt_socket_transmitter',
-    version='1.0.0',
+    version='1.0.1',
     description='send message via socket',
     url='https://github.com/moonshot-marketing/kt-socket-transmitter',
     author='moonshot Marketing',
