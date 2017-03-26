@@ -22,15 +22,10 @@ class SocketTransmitter(object):
 
     __metaclass__ = ABCMeta
 
-    def __init__(self, tcp_ip, tcp_port, buffer_size, logging_file_path):
+    def __init__(self, tcp_ip, tcp_port, logger_name, buffer_size=1024):
 
         # init logger
-        self.logger = logging.getLogger('socket_transmitter')
-        handler = logging.FileHandler(logging_file_path)
-        formatter = logging.Formatter('%(asctime)s %(levelname)s %(message)s')
-        handler.setFormatter(formatter)
-        self.logger.addHandler(handler)
-        self.logger.setLevel(logging.INFO)
+        self.logger = logging.getLogger(logger_name)
 
         self.logger.info('\n\n')
         self.logger.info('New Socket Transmitter Open With ip: %s and port %d' % (tcp_ip, tcp_port))
