@@ -5,3 +5,6 @@ env
 test.py
 venv/
 .DS_Store
+dist
+build
+kt_socket_transmitter.egg-info
