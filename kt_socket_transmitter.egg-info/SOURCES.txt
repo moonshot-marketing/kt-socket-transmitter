@@ -1,7 +1,0 @@
-setup.py
-kt_socket_transmitter/__init__.py
-kt_socket_transmitter.egg-info/PKG-INFO
-kt_socket_transmitter.egg-info/SOURCES.txt
-kt_socket_transmitter.egg-info/dependency_links.txt
-kt_socket_transmitter.egg-info/not-zip-safe
-kt_socket_transmitter.egg-info/top_level.txt
