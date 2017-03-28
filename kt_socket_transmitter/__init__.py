@@ -42,7 +42,7 @@ class SocketTransmitter(object):
     def build_message(self, **kwargs):
         pass
 
-    def execute(self, message):
+    def execute(self, message, has_response=False):
 
         # initialize new socket
         self._initialize()
@@ -53,15 +53,20 @@ class SocketTransmitter(object):
         if self._connect():
             self.logger.info('socket connect to server successfully.')
             self._send_message(message)
-            if self._receive_message() == SUCCESS:
-                self.logger.info('socket send message successfully.')
-            else:
-                self.logger.error('message sent but response is empty.')
+            if not has_response:
+                if self._receive_message() == SUCCESS:
+                    self.logger.info('socket send message successfully.')
+                else:
+                    self.logger.error('message sent but response is empty.')
 
-            self._disconnect()
+                self._disconnect()
+                return None
+            else:
+                return self._receive_message()
 
         else:
             self.logger.error('socket isn\'t connected, message not sent.')
+        return None
 
     def _connect(self):
         try:
